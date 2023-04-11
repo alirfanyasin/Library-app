@@ -1,0 +1,258 @@
+/* ROOT */
+.btn-gradient-primary {
+    background: linear-gradient(145deg, #fd7e14 0%, #984500 100%);
+}
+.bg-gradient-primary {
+    background: linear-gradient(145deg, #fd7e14 0%, #984500 100%);
+}
+
+.text-primary-custom {
+    color: #984500;
+}
+
+#search-input:focus {
+    border: 1px solid #984500;
+    box-shadow: none;
+    outline: none;
+}
+#search-input {
+    padding-left: 40px;
+}
+#input-group-search {
+    position: relative;
+}
+
+.fa-search {
+    position: absolute;
+    left: 15px;
+    top: 13px;
+}
+/* BOOK */
+#data-books .card {
+    overflow: hidden;
+    height: 340px;
+}
+#data-books .card img {
+    height: 100%;
+}
+
+#data-books .btn-add-book {
+    font-size: 25px;
+}
+
+#data-books .card a.btn {
+    bottom: -10px;
+    width: 95%;
+    margin-left: 2.5%;
+    position: absolute;
+}
+
+@media (max-width: 500px) {
+    #data-books .card {
+        height: 250px;
+    }
+    #data-books .card a.btn {
+        display: none;
+    }
+    #data-books .card img {
+        height: 250px;
+    }
+}
+
+/* Add Book */
+#add-book .files input {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset 0.15s ease-in-out,
+        background-color 0.15s linear;
+    transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+    padding: 120px 0px 85px 35%;
+    text-align: center !important;
+    margin: 0;
+    width: 100% !important;
+}
+#add-book .files input:focus {
+    outline: 2px dashed #92b0b3;
+    outline-offset: -10px;
+    -webkit-transition: outline-offset 0.15s ease-in-out,
+        background-color 0.15s linear;
+    transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
+    border: 1px solid #92b0b3;
+}
+#add-book .files {
+    position: relative;
+}
+#add-book .files:after {
+    pointer-events: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 50px;
+    right: 0;
+    height: 56px;
+    content: "";
+    background-image: url(https://image.flaticon.com/icons/png/128/109/109612.png);
+    display: block;
+    margin: 0 auto;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+#add-book .color input {
+    background-color: #f1f1f1;
+}
+#add-book .files:before {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    right: 0;
+    height: 57px;
+    content: " or drag it here. ";
+    display: block;
+    margin: 0 auto;
+    color: #2ea591;
+    font-weight: 600;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+#add-book #output {
+    margin-top: -20px;
+    width: 100%;
+}
+
+/* HOME PAGES STYLE */
+#services-home .icon-section {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#services-home .icon-section i {
+    font-size: 20pt;
+    color: #fff;
+}
+
+/* Book Category Homepage */
+#book-category .card {
+    padding: -10px;
+}
+#book-category .card .card-body .check-list {
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 5px;
+    color: #d26710;
+    transition: 0.5s;
+}
+#book-category .card:hover .card-body .check-list {
+    padding: 5px;
+    margin-right: 20px;
+    background: #d26710;
+    border-radius: 5px;
+    color: white;
+}
+
+/* Ppuplar Book */
+#popular-book .card {
+    position: relative;
+}
+#popular-book .card.description {
+    position: absolute;
+    border-radius: 10px;
+    bottom: 10px;
+    margin-left: 5%;
+    width: 90%;
+    padding: 10px;
+    margin-bottom: -150px;
+    background-color: #ffffffb3;
+    transition: 0.5s;
+}
+
+#popular-book .card.description {
+    color: black;
+}
+
+#popular-book .book-item:hover .card.description {
+    margin-bottom: 0;
+}
+
+/* Contact */
+#sosmed-contact .card .card-body i {
+    font-size: 20pt;
+    margin-right: 20px;
+}
+
+#sosmed-contact .card:hover .card-body i {
+    color: #d26710;
+}
+#sosmed-contact .card:hover .card-body span {
+    color: #d26710;
+    margin-left: 10px;
+    transition: 0.5s;
+}
+
+/* Backend Profile */
+#profile-menu .nav-item.active .nav-link {
+    width: 100%;
+    height: 35px;
+    background: #d26710;
+    color: white;
+}
+
+/* SWAL MESSAGE */
+.swal2-container {
+    z-index: 9999;
+}
+
+/* Sidebar */
+.navbar-vertical.navbar-expand-xs .navbar-nav > .nav-item .icon i {
+    color: black;
+}
+
+.navbar-vertical.navbar-expand-xs
+    .navbar-nav
+    > .nav-item
+    .nav-link.active
+    .icon
+    i {
+    color: white;
+}
+
+/* Loader */
+#loader {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    position: fixed;
+    background: rgb(245, 245, 245);
+}
+#loader img {
+    width: 300px;
+}
+
+/* Taline page home */
+section#tagline {
+    background-image: url("../img/bg-tagline.jpg");
+    height: 400px;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+section#tagline .container {
+    background-image: linear-gradient(to top, #000000, #d267105b);
+    height: 100%;
+    width: 100%;
+}
+
+section#tagline p q {
+    font-size: 35pt;
+}
