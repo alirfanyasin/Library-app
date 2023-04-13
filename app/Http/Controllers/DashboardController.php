@@ -12,15 +12,12 @@ class DashboardController extends Controller
     public function index()
     {
 
-        // $user_id = Auth::user()->id;
-        // $status_book = Book::where(['user_id' => $user_id])->get('status');
-
-        // dd($status_book);
+        $user_id = Auth::user()->id;
 
         return view('backend.pages.dashboard', [
             'title' => 'Dashboard',
             'data_books' => Book::where('status', 'Public')->get(),
-            'data_private_books' => Book::where('status', 'Private')->count(),
+            'data_private_books' => Book::where('user_id', $user_id)->where('status', 'Private')->get()->count(),
             'data_my_book' => Book::where('user_id', auth()->user()->id)->get(),
             'data_uploader' => User::all()->count(),
             'data_last_upload' => Book::where('status', 'Public')->latest('id')->first()

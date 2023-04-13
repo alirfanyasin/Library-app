@@ -18,9 +18,12 @@ class BookController extends Controller
      */
     public function index()
     {
+        $books = DB::table('books')
+        ->orderBy('id', 'desc')
+        ->get();
         return view('backend.pages.books', [
             'title' => 'Books',
-            // 'data_books' => Book::all()
+            'data_books' => $books
         ]);
     }
 
@@ -129,5 +132,17 @@ class BookController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function search(Request $request) {
+        $keyword = $request->key;
+        $books = Book::where('title', 'LIKE', '%' . $keyword . '%')->get();
+
+        return view('backend.pages.books', [
+            'title' => $keyword,
+            'data_books' => $books
+        ]);
+        
     }
 }

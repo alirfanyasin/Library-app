@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('slug');
             $table->string('author');
             $table->string('published');
-            $table->string('synopsis');
+            $table->longText('synopsis');
             $table->string('status');
             $table->string('file_book');
             $table->string('cover_book');

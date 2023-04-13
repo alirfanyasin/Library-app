@@ -101,6 +101,7 @@
                             <div class="d-flex flex-column h-100">
                                 <p class="mb-1 pt-2 text-bold">Lates Uploaded</p>
                                 <h5 class="font-weight-bolder">{{ $data_last_upload->title }}</h5>
+                                {{-- <p>By {{ $data_last_upload->author }}</p> --}}
                                 <p class="mb-5" max="300">{{ $data_last_upload->synopsis }}.</p>
                                 <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto"
                                     href="/my/book/{{ $data_last_upload->slug }}">

@@ -86,11 +86,12 @@
                     <div class="col-md-4 mb-3">
                         <div class="upload-file-book">
                             <label>Upload Your Book</label>
-                            <img src="" alt="" id="output" style="display: none;">
+                            <img src="/template/assets/img/icon-pdf.png" alt="" id="output"
+                                style="display: none;">
                             <div class="form-group files">
                                 <input type="file" name="file_book"
                                     class="form-control @error('file_book') is-invalid @enderror" accept=".pdf"
-                                    onchange="pdf(event)">
+                                    onchange="pdf(event)" value="{{ $data_book->file_book }}">
                                 <small class="invalid-feedback">
                                     @error('file_book')
                                         {{ $message }}
@@ -101,11 +102,14 @@
 
                         <div class="upload-thumbnail">
                             <label>Thumbnail / Book Cover</label>
-                            <img src="" alt="" id="preview-img" style="display: none; width: 100%;">
+                            {{-- <img src="{{ asset('storage/' . $data_book->cover_book) }}" alt=""
+                                style="display: none; width: 100%;"> --}}
+                            <img src="{{ asset('storage/' . $data_book->cover_book) }}" alt="" id="preview-img"
+                                style="display: none; width: 100%;">
                             <div class="form-group files" id="files-img">
                                 <input type="file" name="cover_book"
                                     class="form-control @error('cover_book') is-invalid @enderror" accept="image/*"
-                                    onchange="img(event)">
+                                    onchange="img(event)" value="{{ $data_book->cover_book }}">
                                 <small class="invalid-feedback">
                                     @error('cover_book')
                                         {{ $message }}

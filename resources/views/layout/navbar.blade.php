@@ -11,11 +11,14 @@
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                @if (Request::is('my/books') || Request::is('my/book/*'))
+                @if (Request::is('my/books') || Request::is('my/book/*') || Request::is('my/books/*'))
                     <div class="" id="input-group-search">
                         <span class="text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" id="search-input" placeholder="Type here..."
-                            autocomplete="off">
+                        <form action="/my/books/search" method="get">
+                            <input type="text" class="form-control" name="key" id="search-input"
+                                placeholder="Type here..." autocomplete="off">
+                            <button type="submit" hidden></button>
+                        </form>
                     </div>
                 @endif
 

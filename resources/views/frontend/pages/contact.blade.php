@@ -7,7 +7,7 @@
     </div>
 
     <div class="row">
-        <div class="col-md-6 ">
+        <div class="col-md-6 order-md-1 order-2">
             <form action="" method="POST">
                 <div class="form-group">
                     <label for="full-name">Full Name</label>
@@ -27,7 +27,7 @@
             </form>
         </div>
 
-        <div class="col-md-6 mt-4" id="sosmed-contact">
+        <div class="col-md-6 mt-4 order-md-2 order-1" id="sosmed-contact">
             <a href="" class="d-block">
                 <div class="card mb-3">
                     <div class="card-body">

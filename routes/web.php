@@ -11,6 +11,8 @@ use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\Frontend\F_HomeController;
 use App\Http\Controllers\Frontend\F_BookController;
+use App\Http\Controllers\TestimonialController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -80,6 +82,12 @@ Route::get('/my/read-books', [BookController::class, 'read_data'])->middleware('
 Route::get('/my/book/add-book', [BookController::class, 'create'])->middleware('auth');
 Route::post('/my/book/store-book', [BookController::class, 'store'])->middleware('auth');
 Route::get('/my/book/{slug}', [BookController::class, 'show'])->middleware('auth');
+Route::get('/my/books/search', [BookController::class, 'search'])->middleware('auth');
+
+
+// Route Testimonial
+Route::get('/my/testimonial', [TestimonialController::class, 'index'])->middleware('auth');
+Route::post('/my/testimonial/add', [TestimonialController::class, 'store'])->middleware('auth');
 
 // Router Profile
 Route::get('/my/profile', [ProfileController::class, 'index'])->middleware('auth');

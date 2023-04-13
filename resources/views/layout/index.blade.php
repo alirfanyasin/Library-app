@@ -16,6 +16,7 @@
         <!-- Navbar -->
         @include('layout/navbar')
         <!-- End Navbar -->
+
         <div class="container-fluid py-4">
             @yield('content')
 
@@ -67,7 +68,8 @@
                     <p class="text-sm">Choose between 2 different sidenav types.</p>
                 </div>
                 <div class="d-flex">
-                    <button class="btn bg-gradient-primary w-100 px-3 mb-2 text-white {{ 'active' == true ? 'active' : 'text-dark' }}"
+                    <button
+                        class="btn bg-gradient-primary w-100 px-3 mb-2 text-white {{ 'active' == true ? 'active' : 'text-dark' }}"
                         style="border: 1px solid#984500;" data-class="bg-transparent"
                         onclick="sidebarType(this)">Transparent</button>
                     <button class="btn bg-gradient-primary w-100 px-3 mb-2 ms-2"

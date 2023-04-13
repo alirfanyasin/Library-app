@@ -256,3 +256,11 @@ section#tagline .container {
 section#tagline p q {
     font-size: 35pt;
 }
+
+
+
+@media (max-width: 480px) {
+    section#tagline p q {
+        font-size: 20pt;
+    }
+}

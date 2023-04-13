@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-8 order-2">
                             <h2>{{ $data_book->title }}</h2>
-                            <div class="fw-bold">{{ $data_book->author }}</div>
+                            <div class="fw-bold">By {{ $data_book->author }}</div>
                             <small><i>{{ date('M, Y', strtotime($data_book->published)) }}</i></small><br><br>
                             <p>{{ $data_book->synopsis }}</p>
                             <div class="fw-bold text-dark">{{ $data_book->user->name }}</div>
