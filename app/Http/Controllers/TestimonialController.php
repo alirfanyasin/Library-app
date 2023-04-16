@@ -15,8 +15,11 @@ class TestimonialController extends Controller
      */
     public function index()
     {
+        $my_testimonial = Testimonial::where('user_id', Auth::user()->id)->get();
+
         return view('backend.pages.testimonial.create', [
-            'title' => 'Testimonial'
+            'title' => 'Testimonial',
+            'my_testi' => $my_testimonial
         ]);
     }
 
@@ -38,7 +41,16 @@ class TestimonialController extends Controller
      */
     public function store(Request $request)
     {
-        Testimonial::create(['user_id' => Auth::user()->id ,'message' => $request->message]);
+        $validate = $request->validate([
+            'user_id' => ['required','unique:testimonials'],
+            'message' => ['required', 'max:200']
+        ]);
+
+        $validate['user_id'] = Auth::user()->id;
+        $validate['label'] = $request->label;
+        $validate['rating'] = $request->rating;
+
+        Testimonial::create($validate);
         return redirect('my/dashboard');
     }
 

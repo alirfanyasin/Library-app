@@ -253,29 +253,35 @@
         <p class="fw-semibold" style="color: #d26710;">What they say about us?</p>
     </header>
     <div class="row slider-testimonials mb-5">
-        <div class="col mx-3">
-            <div class="card px-3 py-5 text-center">
-                <header class="mb-3">
-                    <img src="/template/assets/img/team-2.jpg" alt="" class="rounded-pill mx-auto mb-2"
-                        width="60px">
-                    <div class="fw-bolder">Irfan Yasin</div>
-                    <small>Reader</small>
-                </header>
-                <q>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quibusdam omnis consequuntur assumenda
-                    doloribus aliquam facilis molestias quas aspernatur.
-                </q>
+        @foreach ($testimonials as $testi)
+            <div class="col mx-3">
+                <div class="card px-3 py-5 text-center">
+                    <header class="mb-3">
 
-                <div class="rating mt-3 text-warning">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-regular fa-star-half-stroke"></i>
-                    <i class="fa-regular fa-star"></i>
+                        @if ($testi->user->avatar == 'avatar/avatar.png')
+                            <img src="{{ asset('storage/' . $testi->user->avatar) }}" width="60px"
+                                class="rounded-pill mx-auto mb-2" alt="avatar">
+                        @else
+                            <img src="{{ $testi->user->avatar }}" width="60px" class="rounded-pill mx-auto mb-2"
+                                alt="avatar">
+                        @endif
+
+                        {{-- <img src="/template/assets/img/team-2.jpg" alt="" class="rounded-pill mx-auto mb-2"
+                            width="60px"> --}}
+                        <div class="fw-bolder">{{ $testi->user->name }}</div>
+                        <small>{{ $testi->label }}</small>
+                    </header>
+                    <q>
+                        {{ $testi->message }}
+                    </q>
+
+                    <div class="rating mt-3 text-warning">
+                        <?php echo $testi->rating; ?>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col mx-3">
+        @endforeach
+        {{-- <div class="col mx-3">
             <div class="card px-3 py-5 text-center">
                 <header class="mb-3">
                     <img src="/template/assets/img/team-4.jpg" alt="" class="rounded-pill mx-auto mb-2"
@@ -340,7 +346,7 @@
                 </q>
 
             </div>
-        </div>
+        </div> --}}
     </div>
 
     {{-- Testimonials end --}}
