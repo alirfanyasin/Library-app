@@ -95,4 +95,5 @@ Route::get('/my/profile/read-book', [ProfileController::class, 'read_book'])->mi
 Route::get('/my/profile/read-setting', [ProfileController::class, 'read_setting'])->middleware('auth');
 Route::get('/my/profile/my-book/{slug}', [ProfileController::class, 'detail_book'])->middleware('auth');
 Route::get('/my/profile/my-book/edit/{slug}', [ProfileController::class, 'edit_book'])->middleware('auth');
+Route::post('/my/profile/my-book/update/{id}', [ProfileController::class, 'update_book'])->middleware('auth');
 Route::get('/my/profile/my-book/delete/{id}', [ProfileController::class, 'delete_book'])->middleware('auth');

@@ -64,8 +64,8 @@ class BookController extends Controller
             'author' => ['required', 'max:255'],
             'synopsis' => ['required'],
             'status' => ['required'],
-            'file_book' => 'required|file|mimes:pdf',
-            'cover_book' => 'required|file|image|mimes:jpg,png,jpeg',
+            'file_book' => 'required|file|max:70000|mimes:pdf',
+            'cover_book' => 'required|file|image|max:1024|mimes:jpg,png,jpeg',
             'category' => ['required'],
             'published' => ['required']
         ]);
@@ -79,6 +79,7 @@ class BookController extends Controller
         $validate['slug'] = Str::slug($request->title, '-');
         $validate['published'] = $request->published;
         $validate['user_id'] = auth()->user()->id;
+        
         $validate['file_book'] = $request->file('file_book')->storeAs('file-book', $namaFileBook, 'public');
         $validate['cover_book'] = $request->file('cover_book')->storeAs('cover-book', $namaCoverBook, 'public');
 

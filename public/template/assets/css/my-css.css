@@ -28,31 +28,37 @@
     top: 13px;
 }
 /* BOOK */
-#data-books .card {
+
+#data-books .card.content {
+    position: relative;
     overflow: hidden;
-    height: 340px;
+    height: 380px;
 }
-#data-books .card img {
-    height: 100%;
-}
-
-#data-books .btn-add-book {
-    font-size: 25px;
-}
-
-#data-books .card a.btn {
-    bottom: -10px;
-    width: 95%;
-    margin-left: 2.5%;
+#data-books .card.description {
     position: absolute;
+    border-radius: 10px;
+    bottom: 10px;
+    margin-left: 5%;
+    width: 90%;
+    padding: 10px;
+    margin-bottom: -150px;
+    background-color: #ffffffb3;
+    transition: 0.5s;
 }
+
+#data-books .card.description {
+    color: black;
+}
+
+#data-books .book-item:hover .card.description {
+    margin-bottom: 0;
+}
+
+
 
 @media (max-width: 500px) {
-    #data-books .card {
+    #data-books .card.content {
         height: 250px;
-    }
-    #data-books .card a.btn {
-        display: none;
     }
     #data-books .card img {
         height: 250px;

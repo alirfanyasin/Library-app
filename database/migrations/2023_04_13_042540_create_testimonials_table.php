@@ -16,6 +16,8 @@ return new class extends Migration
         Schema::create('testimonials', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->string('label');
+            $table->string('rating');
             $table->string('message', 255)->nullable();
             
             $table->foreign('user_id')->references('id')->on('users');

@@ -3,7 +3,7 @@
     @include('layout.profile-hero')
     <div class="container-fluid py-4">
         <div class="row" id="edit-book">
-            <form action="/my/profile/my-book/update" method="POST" enctype="multipart/form-data">
+            <form action="/my/profile/my-book/update/{{ $data_book->id }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="row">
                     <div class="col-md-8">
@@ -86,8 +86,7 @@
                     <div class="col-md-4 mb-3">
                         <div class="upload-file-book">
                             <label>Upload Your Book</label>
-                            <img src="/template/assets/img/icon-pdf.png" alt="" id="output"
-                                style="display: none;">
+                            <img src="/template/assets/img/icon-pdf.png" alt="" id="output" class="w-100 mb-3">
                             <div class="form-group files">
                                 <input type="file" name="file_book"
                                     class="form-control @error('file_book') is-invalid @enderror" accept=".pdf"
@@ -102,10 +101,8 @@
 
                         <div class="upload-thumbnail">
                             <label>Thumbnail / Book Cover</label>
-                            {{-- <img src="{{ asset('storage/' . $data_book->cover_book) }}" alt=""
-                                style="display: none; width: 100%;"> --}}
-                            <img src="{{ asset('storage/' . $data_book->cover_book) }}" alt="" id="preview-img"
-                                style="display: none; width: 100%;">
+                            <img src="{{ asset('storage/' . $data_book->cover_book) }}" class="w-100 mb-3" alt=""
+                                id="preview-img">
                             <div class="form-group files" id="files-img">
                                 <input type="file" name="cover_book"
                                     class="form-control @error('cover_book') is-invalid @enderror" accept="image/*"
@@ -120,7 +117,7 @@
 
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-gradient-primary text-white">Update</button>
             </form>
         </div>
     </div>
@@ -130,8 +127,6 @@
             const reader = new FileReader()
             reader.onload = () => {
                 const output = document.getElementById('output')
-                const files = document.querySelector('.files');
-                files.style.display = 'none';
                 output.style.display = 'block';
                 output.src = '/template/assets/img/icon-pdf.png'
             }
@@ -144,8 +139,6 @@
             reader.onload = () => {
                 const dataURL = reader.result
                 const previewImg = document.getElementById('preview-img')
-                const filesImg = document.querySelector('#files-img');
-                filesImg.style.display = 'none';
                 previewImg.style.display = 'block';
                 previewImg.src = dataURL
             }

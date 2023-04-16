@@ -6,22 +6,142 @@
                 @csrf
                 <div class="row">
                     <div class="col-md-6">
-                        {{-- <div class="mb-3">
-                            <label for="title" class="form-label">Title</label>
-                            <input type="text" name="title" class="form-control @error('title') is-invalid @enderror"
-                                id="title" value="{{ old('title') }}">
-                            <small class="invalid-feedback">
-                                @error('title')
-                                    {{ $message }}
-                                @enderror
-                            </small>
-                        </div> --}}
+                        <div class="mb-3">
+                            <label for="label" class="form-label">Label</label>
+                            <select class="form-select" id="label" name="label">
+                                <option selected value="Author">Author</option>
+                                <option value="Uploader">Uploader</option>
+                                <option value="Reader">Reader</option>
+                                <option value="User">User</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3 rating">
+                            <label for="rating" class="form-label">Rating</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rating" id="5-star" checked>
+                                <label class="form-check-label" for="5-star">
+                                    <span class="text-warning">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </span>
+                                    <span> (5)</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rating" id="4.5-star">
+                                <label class="form-check-label" for="4.5-star">
+                                    <span class="text-warning">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star-half-stroke"></i>
+                                    </span>
+                                    <span>(4.5)</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rating" id="4-star">
+                                <label class="form-check-label" for="4-star">
+                                    <span class="text-warning">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span>
+                                    <span>(4)</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rating" id="3.5-star">
+                                <label class="form-check-label" for="3.5-star">
+                                    <span class="text-warning">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star-half-stroke"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span>
+                                    <span>(3.5)</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rating" id="3-star">
+                                <label class="form-check-label" for="3-star">
+                                    <span class="text-warning">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span>
+                                    <span>(3)</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rating" id="2.5-star">
+                                <label class="form-check-label" for="2.5-star">
+                                    <span class="text-warning">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star-half-stroke"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span>
+                                    <span>(2.5)</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rating" id="2-star">
+                                <label class="form-check-label" for="2-star">
+                                    <span class="text-warning">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span>
+                                    <span>(2)</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rating" id="1.5-star">
+                                <label class="form-check-label" for="1.5-star">
+                                    <span class="text-warning">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star-half-stroke"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span>
+                                    <span>(1.5)</span>
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="rating" id="1-star">
+                                <label class="form-check-label" for="1-star">
+                                    <span class="text-warning">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                        <i class="fa-regular fa-star"></i>
+                                    </span>
+                                    <span>(1)</span>
+                                </label>
+                            </div>
+                        </div>
+
+
                         <div class="mb-3">
                             <label for="message" class="form-label">Message</label>
                             <textarea name="message" id="message" class="form-control @error('message') is-invalid @enderror" cols="30"
                                 rows="7" maxlength="500" aria-valuetext="{{ old('message') }}">{{ old('message') }}</textarea>
-                            {{-- <small><i class="text-secondary">Max character 0/500</i></small> --}}
-
                             <small class="invalid-feedback">
                                 @error('message')
                                     {{ $message }}

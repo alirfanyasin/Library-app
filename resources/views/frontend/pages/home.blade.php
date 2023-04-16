@@ -266,6 +266,13 @@
                     doloribus aliquam facilis molestias quas aspernatur.
                 </q>
 
+                <div class="rating mt-3 text-warning">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star-half-stroke"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
             </div>
         </div>
         <div class="col mx-3">
@@ -280,7 +287,13 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quibusdam omnis consequuntur assumenda
                     doloribus aliquam facilis molestias quas aspernatur.
                 </q>
-
+                <div class="rating mt-3 text-warning">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
             </div>
         </div>
         <div class="col mx-3">

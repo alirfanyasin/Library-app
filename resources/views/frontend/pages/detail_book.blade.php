@@ -7,8 +7,12 @@
                     <div class="row">
                         <div class="col-md-8 order-2">
                             <h2>{{ $data_book->title }}</h2>
-                            <div class="fw-bold">By {{ $data_book->author }}</div>
-                            <small><i>{{ date('M, Y', strtotime($data_book->published)) }}</i></small><br><br>
+                            <div class="fw-bold mb-2">By {{ $data_book->author }},
+                                <small><i>{{ date('M, Y', strtotime($data_book->published)) }}</i></small>
+                            </div>
+                            <small class="bg-secondary text-white px-3 py-1 rounded-pill">{{ $data_book->category }}</small>
+
+                            <br><br>
                             <p>{{ $data_book->synopsis }}</p>
                             <div class="fw-bold text-dark">{{ $data_book->user->name }}</div>
                             <small>{{ $data_book->created_at->diffForHumans() }}</small><br> <br>
