@@ -8,6 +8,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\Frontend\F_HomeController;
 use App\Http\Controllers\Frontend\F_BookController;
@@ -88,6 +89,12 @@ Route::get('/my/books/search', [BookController::class, 'search'])->middleware('a
 // Route Testimonial
 Route::get('/my/testimonial', [TestimonialController::class, 'index'])->middleware('auth');
 Route::post('/my/testimonial/add', [TestimonialController::class, 'store'])->middleware('auth');
+Route::post('/my/testimonial/delete/{id}', [TestimonialController::class, 'destroy'])->middleware('auth');
+
+// Route Feedback 
+Route::get('/my/feedback', [FeedbackController::class, 'index'])->middleware('auth');
+Route::post('/my/feedback/add', [FeedbackController::class, 'store'])->middleware('auth');
+Route::post('/my/feedback/delete/{id}', [FeedbackController::class, 'destroy'])->middleware('auth');
 
 // Router Profile
 Route::get('/my/profile', [ProfileController::class, 'index'])->middleware('auth');

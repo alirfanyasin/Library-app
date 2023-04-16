@@ -204,8 +204,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
 
 
@@ -228,13 +226,20 @@
         <div class="col-md-6">
             <label for="" class="form-label">My Testimoni</label>
             @foreach ($my_testi as $item)
-                <div class="card mt-1 p-5 rounded-lg">
+                <div class="card mt-1 mb-3 p-5 rounded-lg position-relative">
                     <q>
                         {{ $item->message }}
                     </q>
                     <span class="text-warning mt-3">
                         <?php echo $item->rating; ?>
                     </span>
+                    <form action="/my/testimonial/delete/{{ $item->id }}" method="POST"
+                        enctype="multipart/form-data" class="d-inline">
+                        @csrf
+                        <button type="submit" class="position-absolute text-secondary"
+                            style="background: none; border: none; top: 10px; right: 10px;" data-bs-toggle="tooltip"
+                            data-bs-placement="top" data-bs-title="Delete"><i class="fa fa-trash"></i></button>
+                    </form>
                 </div>
             @endforeach
         </div>
