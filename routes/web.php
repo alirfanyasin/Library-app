@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\SignupController;
 use App\Http\Controllers\Auth\SigninController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CreateBookMailController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\FacebookController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\Frontend\F_HomeController;
 use App\Http\Controllers\Frontend\F_BookController;
 use App\Http\Controllers\TestimonialController;
+use App\Models\Book;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,3 +106,11 @@ Route::get('/my/profile/my-book/{slug}', [ProfileController::class, 'detail_book
 Route::get('/my/profile/my-book/edit/{slug}', [ProfileController::class, 'edit_book'])->middleware('auth');
 Route::post('/my/profile/my-book/update/{id}', [ProfileController::class, 'update_book'])->middleware('auth');
 Route::get('/my/profile/my-book/delete/{id}', [ProfileController::class, 'delete_book'])->middleware('auth');
+
+
+// Create Book Mail
+Route::get('/send-mail', [CreateBookMailController::class, 'index'])->middleware('guest');
+
+
+// Read Book
+Route::get('/my/reading/{slug}', [BookController::class, 'reading_book'])->middleware('auth');

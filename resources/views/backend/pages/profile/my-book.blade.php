@@ -1,6 +1,54 @@
 @extends('layout.index')
 @section('content')
     @include('layout.profile-hero')
+
+    {{-- Start: Script Flip Book --}}
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#read").flipBook({
+                //Layout Setting
+                pdfUrl: '<?php echo asset('storage/' . $detail_my_book->file_book); ?>',
+                lightBox: true,
+                layout: 3,
+                currentPage: {
+                    vAlign: "bottom",
+                    hAlign: "left"
+                },
+                // BTN SETTING
+                btnShare: {
+                    enabled: false
+                },
+                btnPrint: {
+                    hideOnMobile: true
+                },
+                btnDownloadPages: {
+                    enabled: true,
+                    title: "Download pages",
+                    icon: "fa-download",
+                    icon2: "file_download",
+                    url: "images/pdf.rar",
+                    name: "allPages.zip",
+                    hideOnMobile: false
+                },
+                // btnColor: 'rgb(255,120,60)',
+                btnColor: '#984500',
+                // sideBtnColor: 'rgb(255,120,60)',
+                sideBtnColor: '#984500',
+                sideBtnSize: 30,
+                sideBtnBackground: "rgba(0,0,0,.7)",
+                sideBtnRadius: 30,
+                btnSound: {
+                    vAlign: "top",
+                    hAlign: "left"
+                },
+                btnAutoplay: {
+                    vAlign: "top",
+                    hAlign: "left"
+                },
+            });
+        })
+    </script>
+    {{-- End: Script Flip Book --}}
     <div class="container-fluid py-4">
         <div class="row" id="my-book">
             <div class="card">
@@ -21,8 +69,12 @@
 
 
                             <div class="btn-group d-block">
+                                <a id="read" class="btn btn-gradient-primary text-white mt-3">Read Now <i
+                                        class="fa-solid fa-book-open"></i></a>
                                 <a href="{{ asset('storage/' . $detail_my_book->file_book) }}"
-                                    class="btn btn-gradient-primary text-white mt-3">Read Now</a>
+                                    class="btn btn-light text-gradient-primary mt-3"
+                                    download="{{ $detail_my_book->title }} by {{ $detail_my_book->author }} - Library App">Download
+                                    <i class="fas fa-download fa-lg"></i></a>
                             </div>
                             <div class="btn-action position-absolute" style="right: 30px; top: 30px;">
                                 <a href="/my/profile/my-book/edit/{{ $detail_my_book->slug }}" class="mx-2 btn btn-warning"

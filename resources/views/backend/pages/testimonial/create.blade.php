@@ -245,4 +245,14 @@
         </div>
     </div>
     {{-- Sweet alert --}}
+    <?php
+    if (session()->has('success')) {
+        echo "<script> Swal.fire({
+                  icon: 'success',
+                  title: 'Success',
+                  text: 'Create Testimonial',
+                }) </script>";
+    }
+    
+    ?>
 @endsection

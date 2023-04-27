@@ -46,48 +46,72 @@ class ProfileController extends Controller
         ]);
     }
 
-
     public function update_book(Request $request, $id) {
 
-        $data_file_in_database = Book::where('id', $id)->get();
-        dd($data_file_in_database);
-
-
-        $validate = $request->validate([
-            'title' => ['required', 'max:255', 'unique:books'],
-            'author' => ['required', 'max:255'],
-            'synopsis' => ['required'],
-            'status' => ['required'],
-            'file_book' => 'required|file|max:70000|mimes:pdf',
-            'cover_book' => 'required|file|image|max:1024|mimes:jpg,png,jpeg',
-            'category' => ['required'],
-            'published' => ['required']
-        ]);
-
-        $file_book = $request->file('file_book');
-        $namaFileBook = $file_book->hashName();
-
-        $cover_book = $request->file('cover_book');
-        $namaCoverBook = $cover_book->hashName();
-
+        $rules = [
+            'title' => 'required|max:255|unique:books,title,'.$id,
+            'author' => 'required',
+            'status' => 'required',
+            'file_book' => 'nullable|file|max:70000|mimes:pdf',
+            'cover_book' => 'nullable|file|image|max:1024|mimes:jpg,png,jpeg',
+            'category' => 'required',
+            'published' => 'required'
+        ];
+    
+        $book = Book::findOrFail($id);
+        $validate = $request->validate($rules);
+    
         $validate['slug'] = Str::slug($request->title, '-');
         $validate['published'] = $request->published;
         $validate['user_id'] = auth()->user()->id;
-        
-        $validate['file_book'] = $request->file('file_book')->storeAs('file-book', $namaFileBook, 'public');
-        $validate['cover_book'] = $request->file('cover_book')->storeAs('cover-book', $namaCoverBook, 'public');
-        
-        
-        
-        // if($file_book == $data_file_in_database) {
-        //     return true;
-        // }else {
-        //     return false;
-        // }
-
-        Book::where('id', $id)->update($validate);
+    
+        if ($request->hasFile('file_book')) {
+            Storage::delete($book->file_book);
+            $validate['file_book'] = $request->file('file_book')->store('file-book');
+        }
+    
+        if ($request->hasFile('cover_book')) {
+            Storage::delete($book->cover_book);
+            $validate['cover_book'] = $request->file('cover_book')->store('cover-book');
+        }
+    
+        $book->update($validate);
         return redirect('my/profile');
     }
+    
+    
+
+    // public function update_book(Request $request, $id) {
+
+    //     $rules = [
+    //         'title' => 'required|max:255|unique:books',
+    //         'author' => 'required',
+    //         'status' => 'required',
+    //         'file_book' => 'required|file|max:70000|mimes:pdf',
+    //         'cover_book' => 'required|file|image|max:1024|mimes:jpg,png,jpeg',
+    //         'category' => 'required',
+    //         'published' => 'required'
+    //     ];
+
+
+    //     $validate = $request->validate($rules);
+
+    //     $rules['slug'] = Str::slug($request->title, '-');
+    //     $rules['published'] = $request->published;
+    //     $rules['user_id'] = auth()->user()->id;
+
+    //     if ($request->file('file_book') || $request->file('cover_book')) {
+    //         $rules['file_book'] = $request->file('file_book')->store('file-book');
+    //         $rules['cover_book'] = $request->file('cover_book')->store('cover-book');
+    //     }
+
+       
+
+    //     Book::where('id', $id)->update($validate);
+    //     return redirect('my/profile');
+    // }
+
+
 
     public function delete_book($id){
         $data = Book::find($id);

@@ -16,7 +16,7 @@
                         </div>
                         <div class="col-4 text-end">
                             <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                <i class="ni ni-money-coins text-lg opacity-10" aria-hidden="true"></i>
+                                <i class="fa-solid fa-book" style="font-size: 15pt;"></i>
                             </div>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-4 text-end">
                             <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
+                                <i class="fa-solid fa-key" style="font-size: 15pt;"></i>
                             </div>
                         </div>
                     </div>
@@ -53,16 +53,14 @@
                             <div class="numbers">
                                 <p class="text-sm mb-0 text-capitalize font-weight-bold">My Book</p>
                                 <h5 class="font-weight-bolder mb-0">
-                                    {{-- @if ($data_my_book->uploader == auth()->user()->name) --}}
                                     {{ count($data_my_book) }}
-                                    {{-- @endif --}}
                                     <span class="text-primary-custom text-sm font-weight-bolder">Uploaded</span>
                                 </h5>
                             </div>
                         </div>
                         <div class="col-4 text-end">
                             <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                <i class="ni ni-paper-diploma text-lg opacity-10" aria-hidden="true"></i>
+                                <i class="fa-solid fa-book-open-reader" style="font-size: 15pt;"></i>
                             </div>
                         </div>
                     </div>
@@ -84,7 +82,7 @@
                         </div>
                         <div class="col-4 text-end">
                             <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                <i class="ni ni-cart text-lg opacity-10" aria-hidden="true"></i>
+                                <i class="fa-solid fa-users" style="font-size: 15pt;"></i>
                             </div>
                         </div>
                     </div>
@@ -99,7 +97,7 @@
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="d-flex flex-column h-100">
-                                <p class="mb-1 pt-2 text-bold">Lates Uploaded</p>
+                                <p class="mb-1 pt-2 text-bold">New Book</p>
                                 <h5 class="font-weight-bolder">{{ $data_last_upload->title }}</h5>
                                 <p class="mb-5" max="300">{{ $data_last_upload->synopsis }}.</p>
                                 <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto"
@@ -125,13 +123,11 @@
                     style="background-image: url('/template/assets/img/ivancik.jpg');">
                     <span class="mask bg-gradient-dark"></span>
                     <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
-                        <h5 class="text-white font-weight-bolder mb-4 pt-2">Work with the rockets</h5>
-                        <p class="text-white">Wealth creation is an evolutionarily recent positive-sum game. It
-                            is all about who take the opportunity first.</p>
-                        <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="javascript:;">
-                            Read More
-                            <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
-                        </a>
+                        <h5 class="text-white font-weight-bolder mb-4 pt-2">Motivations</h5>
+                        <q class="text-white">Membaca bukan hanya menghibur, tetapi juga membantu Anda mengembangkan
+                            keterampilan berpikir kritis, meningkatkan daya ingat, dan meningkatkan konsentrasi Anda.
+                            Membaca adalah investasi terbaik untuk masa depan Anda.</q>
+
                     </div>
                 </div>
             </div>

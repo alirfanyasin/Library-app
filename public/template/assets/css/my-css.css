@@ -2,6 +2,9 @@
 .btn-gradient-primary {
     background: linear-gradient(145deg, #fd7e14 0%, #984500 100%);
 }
+.text-gradient-primary {
+    color: #984500;
+}
 .bg-gradient-primary {
     background: linear-gradient(145deg, #fd7e14 0%, #984500 100%);
 }

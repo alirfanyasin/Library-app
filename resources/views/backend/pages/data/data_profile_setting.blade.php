@@ -23,14 +23,12 @@
                         Name:</strong> &nbsp; {{ auth()->user()->name }}</li>
                 <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Email:</strong>
                     &nbsp; {{ auth()->user()->email }}</li>
-                <li class="list-group-item border-0 ps-0 text-sm"><strong class="text-dark">Location:</strong>
-                    &nbsp; USA</li>
             </ul>
         </div>
     </div>
 </div>
 <div class="col-12 col-xl-4">
-    <div class="card h-100">
+    {{-- <div class="card h-100">
         <div class="card-header pb-0 p-3">
             <h6 class="mb-0">Conversations</h6>
         </div>
@@ -89,6 +87,9 @@
                 </li>
             </ul>
         </div>
+    </div> --}}
+
+    <div class="cooming-soom">
+        <h2 class="text-warning">Mohon maaf, Halaman ini dalam <br> proses perbaikan !</h2>
     </div>
 </div>
-

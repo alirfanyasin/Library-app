@@ -50,7 +50,7 @@ class TestimonialController extends Controller
         $validate['rating'] = $request->rating;
 
         Testimonial::create($validate);
-        return redirect('my/testimonial');
+        return redirect('my/testimonial')->with('success', 'Create Testimonial');
     }
 
     /**

@@ -1,15 +1,26 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
     <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
     <link rel="icon" type="image/png" href="/template/assets/img/main-logo.png">
     <title>
         Library - {{ $title }}
     </title>
-    {{-- JQUERY --}}
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> --}}
-    {{-- JQuery --}}
-    <script src="/template/assets/js/jquery.js"></script>
+
+    {{-- Plugin PDF-FLIPBOOK --}}
+    <!-- AJAX -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+    <!-- costume css -->
+    <link rel="stylesheet" type="text/css" href="/plugin/Pdf-Flipbook/css/flipbook.style.css">
+    <link rel="stylesheet" type="text/css" href="/plugin/Pdf-Flipbook/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="/plugin/Pdf-Flipbook/css/footer.css">
+    <!-- Include JS -->
+    <script src="/plugin/Pdf-Flipbook/js/flipbook.min.js"></script>
+
+    {{-- <script src="/template/assets/js/jquery.js"></script> --}}
     <!--     Fonts and icons     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
     <!-- Nucleo Icons -->
@@ -29,5 +40,8 @@
     <link id="pagestyle" href="/template/assets/css/soft-ui-dashboard.css?v=1.0.6" rel="stylesheet" />
     {{-- My CSS File --}}
     <link rel="stylesheet" href="/template/assets/css/my-css.css">
+
+
+
 
 </head>
