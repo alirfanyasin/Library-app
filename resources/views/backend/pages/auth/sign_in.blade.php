@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="/template/assets/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/template/assets/img/logo-library-app.png">
+    <link rel="icon" type="image/png" href="/template/assets/img/logo-library-app.png">
     <title>
         Library - {{ $title }}
     </title>
@@ -31,9 +31,11 @@
     <nav
         class="navbar navbar-expand-lg position-absolute top-0 z-index-3 w-100 shadow-none my-3 navbar-transparent mt-4">
         <div class="container">
-            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 text-white" href="/">
-                Library
+            <a href="/" class="d-bloc">
+                <img src="/template/assets/img/logo-library-app-main.png" class="justify-content-center mx-auto"
+                    width="100px" alt="main_logo">
             </a>
+
             <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -192,28 +194,27 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8 mb-4 mx-auto text-center">
-                        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
-                            Tentang
+                        <a href="/about" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                            About us
                         </a>
 
-                        <a href="javascript:;" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
-                            Hubungi Kami
+                        <a href="/contact" target="_blank" class="text-secondary me-xl-5 me-3 mb-sm-0 mb-2">
+                            Contact
                         </a>
                     </div>
                     <div class="col-lg-8 mx-auto text-center mb-4 mt-2">
-                        <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
-                            <span class="text-lg fab fa-dribbble"></span>
-                        </a>
-                        <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
-                            <span class="text-lg fab fa-twitter"></span>
-                        </a>
-                        <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+                        <a href="https://www.instagram.com/al_irfan_y/" target="_blank"
+                            class="text-secondary me-xl-4 me-4">
                             <span class="text-lg fab fa-instagram"></span>
                         </a>
-                        <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
-                            <span class="text-lg fab fa-pinterest"></span>
+                        <a href="https://web.facebook.com/" target="_blank" class="text-secondary me-xl-4 me-4">
+                            <span class="text-lg fab fa-facebook"></span>
                         </a>
-                        <a href="javascript:;" target="_blank" class="text-secondary me-xl-4 me-4">
+                        <a href="https://wa.me/6281217263686" target="_blank" class="text-secondary me-xl-4 me-4">
+                            <span class="text-lg fab fa-whatsapp"></span>
+                        </a>
+                        <a href="https://github.com/alirfanyasin" target="_blank"
+                            class="text-secondary me-xl-4 me-4">
                             <span class="text-lg fab fa-github"></span>
                         </a>
                     </div>

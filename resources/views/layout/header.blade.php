@@ -3,8 +3,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="/template/assets/img/main-logo.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/template//assets/img/logo-library-app.png">
+    <link rel="icon" type="image/png" href="/template/assets/img/logo-library-app.png">
     <title>
         Library - {{ $title }}
     </title>
