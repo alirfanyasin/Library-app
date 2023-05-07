@@ -83,6 +83,8 @@ class BookController extends Controller
         $validate['file_book'] = $request->file('file_book')->storeAs('file-book', $namaFileBook, 'public');
         $validate['cover_book'] = $request->file('cover_book')->storeAs('cover-book', $namaCoverBook, 'public');
 
+     
+
         Book::create($validate);
         return redirect('my/books');
     }

@@ -17,7 +17,7 @@
                             <div class="fw-bold text-dark">{{ $data_book->user->name }}</div>
                             <small>{{ $data_book->created_at->diffForHumans() }}</small><br> <br>
                             <button type="button" class="btn btn-gradient-primary text-white" onclick="error()">Read
-                                Now</button>
+                                Now <i class="fa-solid fa-book-open"></i></button>
                             {{-- <a href="{{ asset('storage/' . $data_book->file_book) }}"
                                 class="btn btn-gradient-primary text-white">Baca Sekarang</a> --}}
                         </div>

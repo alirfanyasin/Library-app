@@ -81,38 +81,6 @@ class ProfileController extends Controller
     
     
 
-    // public function update_book(Request $request, $id) {
-
-    //     $rules = [
-    //         'title' => 'required|max:255|unique:books',
-    //         'author' => 'required',
-    //         'status' => 'required',
-    //         'file_book' => 'required|file|max:70000|mimes:pdf',
-    //         'cover_book' => 'required|file|image|max:1024|mimes:jpg,png,jpeg',
-    //         'category' => 'required',
-    //         'published' => 'required'
-    //     ];
-
-
-    //     $validate = $request->validate($rules);
-
-    //     $rules['slug'] = Str::slug($request->title, '-');
-    //     $rules['published'] = $request->published;
-    //     $rules['user_id'] = auth()->user()->id;
-
-    //     if ($request->file('file_book') || $request->file('cover_book')) {
-    //         $rules['file_book'] = $request->file('file_book')->store('file-book');
-    //         $rules['cover_book'] = $request->file('cover_book')->store('cover-book');
-    //     }
-
-       
-
-    //     Book::where('id', $id)->update($validate);
-    //     return redirect('my/profile');
-    // }
-
-
-
     public function delete_book($id){
         $data = Book::find($id);
         Storage::delete($data->file_book);
